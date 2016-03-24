@@ -6,8 +6,9 @@ module.exports = function PolyfillsPlugin(options) {
 
 	options = options || {};
     options = {
-		uaString: 'Mozilla/5.0 (Windows; U; MSIE 7.0; Windows NT 6.0; en-US)',
-    	minify: true
+		uaString: options.uaString || 'Mozilla/5.0 (Windows; U; MSIE 7.0; Windows NT 6.0; en-US)',
+    	minify: options.minify || true,
+		features: options.features || {}
     };
 
     return { apply: function (compiler) {
